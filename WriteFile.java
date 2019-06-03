@@ -7,10 +7,10 @@ import java.nio.file.StandardOpenOption;
 import java.util.Arrays;
 import java.util.List;
 
-public class WriteFile extends File {
+public class WriteFile extends FileWriter {
 
-    public WriteFile(String pathname) {
-        super(pathname);
+    public WriteFile(String pathname) throws IOException {
+        super(pathname, true);
     }
 
     public void SaveFile(Plateau plateau) {
