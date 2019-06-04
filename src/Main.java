@@ -21,6 +21,5 @@ public class Main {
         } catch(Exception e) {
             System.out.println("Le fichier n'a pas pu être ouvert.");
         }
-
     }
 }
