@@ -1,3 +1,5 @@
+import java.io.File;
+
 public class Main {
     public static void main(String [] args) {
         vivre();
@@ -7,14 +9,15 @@ public class Main {
         Plateau plateau = new Plateau(3);
 
         try {
-            WriteFile fichier = new WriteFile("GameOfLife.txt");
-            // int i = 0;
-            while /*(i < 10) { */ (!plateau.estVide()) {
-                fichier.sauvegarde(plateau);
+            File fichier = new File("GameOfLife.txt");
+            WriteFile ecritureFichier = new WriteFile();
+
+            while(!plateau.estVide()) {
+                ecritureFichier.sauvegarde(plateau, fichier);
                 plateau.affiche();
                 plateau.gagneUnAn();
-                // i++;
             }
+
         } catch(Exception e) {
             System.out.println("Le fichier n'a pas pu être ouvert.");
         }
